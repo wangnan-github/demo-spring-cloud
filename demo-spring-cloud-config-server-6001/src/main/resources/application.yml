@@ -1,0 +1,13 @@
+server:
+  port: 6001
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/WangNanGithub/java-demo.git # git仓库的地址
+          search-paths: demo-spring-cloud/demo-spring-cloud-config-git/springcloud-config  # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: WangNanGithub #Git仓库用户名
+          password: Oj4WkCSJZFnQukO4n2sH #Git仓库密码

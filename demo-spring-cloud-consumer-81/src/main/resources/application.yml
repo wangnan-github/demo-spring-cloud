@@ -1,0 +1,21 @@
+server:
+  port: 81
+spring:
+  application:
+    name: consumer-81
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+feign:
+  hystrix:
+    enabled: true
+#暴露全部的监控信息
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'

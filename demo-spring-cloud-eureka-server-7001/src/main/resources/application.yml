@@ -1,0 +1,20 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: eureka-server-7001
+eureka:
+  instance:
+    hostname: ${EUREKA_HOST_NAME:eureka-server} #服务主机名
+    appname: ${spring.application.name} #服务名称，默认为 unknow 这里直接取 spring.application.name 了
+  server:
+    # 防止由于Eureka的机制导致Client被错误显示在线，仅在开发环境使用，生产环境需缓存此信息，防止因网络波动导致服务频繁上下线。
+    enable-self-preservation: false
+  client:
+    # 是否把服务中心本身当做eureka client 注册。默认为true
+    register-with-eureka: false
+    # 是否拉取 eureka server 的注册信息。 默认为true
+    fetch-registry: false
+    service-url:
+      # 设置与 Eureka Server 交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://localhost:7001/eureka/
