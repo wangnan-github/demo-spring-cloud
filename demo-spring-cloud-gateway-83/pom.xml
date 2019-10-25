@@ -1,38 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.0.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
     <groupId>com.gdkj</groupId>
-    <artifactId>demo-spring-cloud</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>demo-spring-cloud-eureka-server-7001</module>
-        <module>demo-spring-cloud-provider-8081</module>
-        <module>demo-spring-cloud-consumer-81</module>
-        <module>demo-spring-cloud-consumer-82</module>
-
-        <module>demo-spring-cloud-config-server-6001</module>
-        <module>demo-spring-cloud-config-client-6002</module>
-
-        <module>demo-spring-cloud-hystrix-dashboard-9001</module>
-        <module>demo-spring-cloud-hystrix-dashboard-turbo-9002</module>
-        <module>demo-maven</module>
-
-        <module>demo-spring-cloud-gateway-83</module>
-        <module>demo-spring-cloud-atomikos</module>
-        <module>demo-spring-cloud-atomikos-02</module>
-
-    </modules>
+    <artifactId>demo-spring-cloud-gateway-83</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>demo-spring-cloud-gateway</name>
+    <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>

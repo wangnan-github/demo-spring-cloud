@@ -1,0 +1,22 @@
+server:
+  port: 83
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: gateway-service
+          # 服务化路由转发, 格式为：lb://应用注册服务名
+          # uri: lb://spring-cloud-producer
+          uri: https://blog.csdn.net
+          order: 0
+          filters:
+            - AddRequestParameter=smile, wn
+          predicates:
+            - Path=/foo/{segment}
+            - Cookie=sessionId, test
+            - Host=**.baidu.com
+            - Method=POST
+            - Query=smile, wn
+

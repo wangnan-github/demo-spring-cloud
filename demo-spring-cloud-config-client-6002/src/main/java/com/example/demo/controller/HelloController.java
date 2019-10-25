@@ -10,6 +10,14 @@ public class HelloController {
     @Value("${springcloud.hello}")
     private String hello;
 
+    public String getHello() {
+        return hello;
+    }
+
+    public void setHello(String hello) {
+        this.hello = hello;
+    }
+
     @RequestMapping("/hello")
     public String from() {
         return this.hello;
